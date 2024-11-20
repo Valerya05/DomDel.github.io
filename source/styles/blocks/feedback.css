@@ -1,0 +1,81 @@
+/* Блок feedback — Обратная связь */
+
+.feedback {
+  min-height: 1010px;
+  margin-top: 100px;
+  padding-top: 75px;
+  text-align: center;
+  background-image:
+    linear-gradient(to right, var(--color-blue-lighter) 100%, transparent 0%),
+    url("../../images/forma-tablet@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.feedback__wrapper {
+  position: relative;
+  z-index: 10;
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.feedback__title {
+  margin: 0;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: var(--color-light);
+}
+
+.feedback__text {
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  color: var(--color-light);
+}
+
+@media (min-width: 768px) {
+  .feedback {
+    min-height: 850px;
+  }
+
+  .feedback__wrapper {
+    width: 500px;
+  }
+
+  .feedback__text {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .feedback {
+    min-height: 770px;
+    background-image:
+      linear-gradient(to right, var(--color-blue-lighter) 50%, transparent 50%),
+      url("../../images/forma-desktop@1x.jpg");
+    background-size: auto;
+  }
+
+  .feedback__wrapper {
+    width: 1200px;
+    padding-right: 670px;
+    padding-left: 110px;
+    text-align: left;
+  }
+
+  .feedback__title {
+    font-size: 35px;
+  }
+
+  .feedback__text {
+    font-size: 16px;
+  }
+}

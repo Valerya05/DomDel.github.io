@@ -1,0 +1,90 @@
+/* Блок features — Преимущества */
+
+.features {
+  margin-top: 40px;
+}
+
+.features__list {
+  margin: 0;
+  padding: 0;
+  counter-reset: li; /* Инициализируем (запускаем) счетчик */
+  list-style: none; /* Отменяем нумерацию установленную по умолчанию */
+}
+
+.features__item::before {
+  content: "0" counter(li); /* В качестве данных используем счетчик */
+  counter-increment: li; /* Увеличиваем значение счетчика на 1 */
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 85px;
+  color: var(--color-orange-lightest);
+}
+
+.features__item:hover::before {
+  color: var(--color-orange-lighter);
+  transition: 0.2s ease-in-out;
+}
+
+.features__caption {
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--color-gray);
+}
+
+.features__description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+  .features__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .features__item {
+    width: calc((100% - 70px) / 2);
+  }
+
+  .features__item:nth-child(2),
+  .features__item:nth-child(4) {
+    padding-top: 85px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .features {
+    margin-top: 60px;
+  }
+
+  .features__list {
+    padding-bottom: 100px;
+    background: url("../../images/outline-city.svg") no-repeat bottom center;
+    background-size: 100%;
+  }
+
+  .features__item {
+    width: calc((100% - 3 * 30px) / 4);
+  }
+
+  .features__item:nth-child(2),
+  .features__item:nth-child(4) {
+    padding-top: 100px;
+  }
+
+  .features__caption {
+    font-size: 22px;
+  }
+
+  .features__description {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}

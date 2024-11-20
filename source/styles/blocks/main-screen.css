@@ -1,0 +1,185 @@
+/* Блок main-screen — Главный экран */
+
+.main-screen {
+  min-height: 580px;
+  background-image:
+    linear-gradient(to right, var(--color-blue-lighter) 100%, transparent 0%),
+    url("../../images/moscow-tablet@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main-screen__header {
+  position: relative;
+}
+
+.main-screen__lists { /* обёртка для списка меню и списка социальных сетей */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0 auto;
+  width: 100%;
+  height: 580px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--color-blue);
+}
+
+.main-screen__menu {
+  margin-bottom: 60px;
+}
+
+.main-screen__toggle {
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  z-index: 2;
+  width: 34px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.main-screen__nav--closed .main-screen__toggle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34px;
+  height: 3px;
+  background-color: var(--color-white);
+  box-shadow: 0 10px 0 0 var(--color-white), 0 20px 0 0 var(--color-white);
+  transition: 0.2s ease-in-out;
+}
+
+.main-screen__nav--closed .main-screen__toggle:hover::before,
+.main-screen__nav--closed .main-screen__toggle:focus::before {
+  background-color: var(--color-orange);
+  box-shadow: 0 10px 0 0 var(--color-orange), 0 20px 0 0 var(--color-orange);
+}
+
+.main-screen__nav--opened .main-screen__toggle::before,
+.main-screen__nav--opened .main-screen__toggle::after {
+  content: "";
+  position: absolute;
+  top: 11px;
+  right: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--color-white);
+  transition: 0.2s ease-in-out;
+}
+
+.main-screen__nav--opened .main-screen__toggle:hover::before,
+.main-screen__nav--opened .main-screen__toggle:focus::before,
+.main-screen__nav--opened .main-screen__toggle:hover::after,
+.main-screen__nav--opened .main-screen__toggle:focus::after {
+  background-color: var(--color-orange);
+}
+
+.main-screen__nav--opened .main-screen__toggle::before {
+  transform: rotate(45deg);
+}
+
+.main-screen__nav--opened .main-screen__toggle::after {
+  transform: rotate(-45deg);
+}
+
+.main-screen__nav--closed .main-screen__lists {
+  display: none;
+}
+
+.main-screen__nav--opened .main-screen__lists {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .main-screen {
+    min-height: 740px;
+    margin: 0 auto;
+  }
+
+  .main-screen__lists {
+    min-height: 740px;
+  }
+
+  .main-screen__toggle {
+    top: 50px;
+    right: 35px;
+    width: 60px;
+    height: 38px;
+  }
+
+  .main-screen__nav--closed .main-screen__toggle::before {
+    width: 60px;
+    height: 4px;
+    box-shadow: 0 17px 0 0 var(--color-white), 0 34px 0 0 var(--color-white);
+  }
+
+  .main-screen__nav--closed .main-screen__toggle:hover::before,
+  .main-screen__nav--closed .main-screen__toggle:focus::before {
+    box-shadow: 0 17px 0 0 var(--color-orange), 0 34px 0 0 var(--color-orange);
+  }
+
+  .main-screen__nav--opened .main-screen__toggle::before,
+  .main-screen__nav--opened .main-screen__toggle::after {
+    top: 17px;
+    right: 0;
+    width: 45px;
+    height: 3px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-screen {
+    width: auto;
+    min-height: 770px;
+    background-image:
+      linear-gradient(to right, var(--color-blue-lighter) 50%, transparent 50%),
+      url("../../images/moscow-desktop@1x.jpg");
+    background-size: auto;
+  }
+
+  .main-screen__header {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .main-screen__lists {
+    width: 50%;
+    min-height: 600px;
+    margin-top: 85px;
+    padding-top: 50px;
+  }
+
+  .main-screen__toggle {
+    top: 40px;
+    right: 0;
+    left: 15px;
+    width: 40px;
+    height: 30px;
+  }
+
+  .main-screen__nav--closed .main-screen__toggle::before {
+    width: 40px;
+    height: 3px;
+    box-shadow: 0 12px 0 0 var(--color-white), 0 24px 0 0 var(--color-white);
+  }
+
+  .main-screen__nav--closed .main-screen__toggle:hover::before,
+  .main-screen__nav--closed .main-screen__toggle:focus::before {
+    box-shadow: 0 12px 0 0 var(--color-orange), 0 24px 0 0 var(--color-orange);
+  }
+
+  .main-screen__nav--opened .main-screen__toggle::before,
+  .main-screen__nav--opened .main-screen__toggle::after {
+    top: 13px;
+    right: 0;
+    width: 38px;
+    height: 3px;
+  }
+}
